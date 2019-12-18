@@ -2,6 +2,7 @@ package vn.sapo.loyaltycard.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,13 +13,14 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class LoyaltyCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String code;
     private String phone;
-    private String loyaltyCartTypeId;
+    private Long loyaltyCartTypeId;
     private Float point;
     private Float totalSpent;
     private LocalDate startDate;
