@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -23,7 +24,9 @@ public class LoyaltyCardType {
     private Float spentThreshold;
     private Integer duration;
     private Float discountPercent;
+    @CreationTimestamp
     private LocalDate createdOn;
+    @CreationTimestamp
     private LocalDate modifiedOn;
 
 }
