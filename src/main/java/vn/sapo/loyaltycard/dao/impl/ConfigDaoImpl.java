@@ -6,6 +6,8 @@ import vn.sapo.loyaltycard.dao.ConfigDao;
 import vn.sapo.loyaltycard.model.Config;
 import vn.sapo.loyaltycard.repository.ConfigRepository;
 
+import java.util.Optional;
+
 @Service
 public class ConfigDaoImpl implements ConfigDao {
 
@@ -20,5 +22,10 @@ public class ConfigDaoImpl implements ConfigDao {
     @Override
     public Config getConfig(String config) {
         return configRepository.findByConfig(config);
+    }
+
+    @Override
+    public Config getConfig(Long id) {
+        return configRepository.findById(id).orElse(null);
     }
 }
